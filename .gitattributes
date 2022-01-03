@@ -1,0 +1,42 @@
+*                 text=auto
+
+# Source code
+*.css             text diff=css
+*.html            text diff=html
+*.js              text
+*.json            text
+*.jsx             text
+
+# Documentation
+*.md              text diff=markdown
+LICENSE           text
+
+# Configs
+.env              text
+.gitattributes    text
+.gitconfig        text
+*.lock            text -diff
+package.json      text eol=lf
+package-lock.json text -diff
+.prettierrc       text
+yarn.lock         text -diff
+
+# Graphics
+*.gif             binary
+*.ico             binary
+*.jpg             binary
+*.jpeg            binary
+*.pdf             binary
+*.png             binary
+# SVG treated as an asset (binary) by default.
+*.svg             text
+# If you want to treat it as binary,
+# use the following line instead.
+# *.svg           binary
+*.webp            binary
+
+# RC files (like .babelrc or .eslintrc)
+*.*rc             text
+
+# Ignore files (like .npmignore or .gitignore)
+*.*ignore         text
