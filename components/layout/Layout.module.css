@@ -1,0 +1,16 @@
+@font-face {
+    font-family: 'Open-sans-Regular';
+    src: url(../../public/fonts/OpenSans/OpenSans-Regular.ttf);
+}
+.main {
+    background-color: red;
+    display: grid;
+    grid-template-columns: auto;
+    font-family: 'Open-sans-Regular', Arial, sans-serif !important;
+}
+
+@media (min-width: 50em) {
+    .main {
+        grid-template-columns: 17.5em auto;
+    }
+}

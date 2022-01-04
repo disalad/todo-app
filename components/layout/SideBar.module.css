@@ -1,0 +1,79 @@
+.sidebar {
+    background-color: aqua;
+    min-width: 42.5%;
+    max-width: 17.5em;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: #efefef;
+    min-height: 100vh;
+}
+
+.toggleSideBarSect {
+    padding: 0.5em 0;
+    width: 100%;
+}
+
+.bars {
+    transform: scale(0.6);
+    padding: 0.5em 1em;
+    cursor: pointer;
+    width: max-content;
+}
+
+.bars:hover {
+    background-color: #ffffff;
+}
+
+.bars div {
+    width: 2.25em;
+    height: 0.25em;
+    background-color: #34373d;
+    margin: 7px 0;
+    border-radius: 1em;
+}
+
+.ul {
+    list-style-type: none;
+    width: 100%;
+}
+
+.button {
+    width: 100%;
+    flex: 1 auto;
+    cursor: pointer;
+    padding: 0 0.75em;
+    background-color: #efefef;
+}
+
+.button:hover {
+    background-color: #ffffff;
+}
+
+.buttonInner {
+    padding: 0.5em 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    font-size: 0.95rem;
+}
+
+.title {
+    flex: 1;
+    margin: 0 0.5em;
+}
+
+.count {
+    margin-left: auto;
+}
+
+@media (min-width: 50em) {
+    .sidebar {
+        position: sticky;
+    }
+}
