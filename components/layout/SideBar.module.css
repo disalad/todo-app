@@ -1,5 +1,4 @@
 .sidebar {
-    background-color: aqua;
     min-width: 42.5%;
     max-width: 17.5em;
     display: flex;
@@ -11,6 +10,7 @@
     top: 0;
     background-color: #efefef;
     min-height: 100vh;
+    z-index: 999;
 }
 
 .toggleSideBarSect {

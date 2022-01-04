@@ -3,10 +3,17 @@
     src: url(../../public/fonts/OpenSans/OpenSans-Regular.ttf);
 }
 .main {
-    background-color: red;
     display: grid;
     grid-template-columns: auto;
     font-family: 'Open-sans-Regular', Arial, sans-serif !important;
+}
+
+.oneItem {
+    grid-template-columns: auto !important;
+}
+
+.childrenParent {
+    padding: 1em;
 }
 
 @media (min-width: 50em) {
