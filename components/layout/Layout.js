@@ -6,7 +6,7 @@ function Layout({ children }) {
     const [sideBarHidden, setSideBarHidden] = useState(false);
 
     return (
-        <main className={`${classes.main} ${sideBarHidden ? classes.oneItem : null}`}>
+        <main className={`${classes.main} ${sideBarHidden ? classes.oneItem : ''}`}>
             {!sideBarHidden && <SideBar onClickHandler={ev => setSideBarHidden(true)} />}
             <div className={classes.childrenParent}>{children}</div>
         </main>

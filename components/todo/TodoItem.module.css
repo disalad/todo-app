@@ -1,11 +1,54 @@
 .todoItem {
+    display: flex;
     border: 1px solid transparent;
     border-radius: 0.25em;
     padding: 0.7em 1em;
-    border-bottom: 2px solid #efefef;
+    border-bottom: 2px solid #eedddd;
     cursor: pointer;
 }
 
 .todoItem:hover {
     background-color: #efefef;
+}
+
+.todoContent {
+    margin: 0 1em;
+    position: relative;
+    bottom: 0.1em;
+}
+
+.starIconDiv {
+    margin-left: auto;
+}
+
+/* Mark as done tick */
+.circle {
+    position: relative;
+    border: 1px solid #101820ff;
+    border-radius: 50%;
+    width: 1.5em;
+    height: 1.5em;
+}
+
+.circle span {
+    display: none;
+}
+
+.circle:hover span {
+    display: inline-block;
+}
+
+.checkmark {
+    transform: rotate(45deg) translate(-50%, -50%);
+    height: 1em;
+    width: 0.65em;
+    border-bottom: 5px solid #78b13f;
+    border-right: 5px solid #78b13f;
+    position: absolute;
+    top: 50%;
+    left: 20%;
+}
+
+.taskDone span {
+    display: inline-block !important;
 }

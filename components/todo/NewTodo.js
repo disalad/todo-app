@@ -24,10 +24,11 @@ function NewTodo() {
                 <input
                     type='text'
                     name='todo'
-                    className={`${classes.input} ${inputOnFocus ? classes.focused : null}`}
+                    className={`${classes.input} ${inputOnFocus ? classes.focused : ''}`}
                     placeholder='Add a task'
                     onChange={inputChangeHandler}
                     onFocus={ev => setInputOnFocus(true)}
+                    autoComplete='off'
                 />
             </div>
             {inputOnFocus && (
