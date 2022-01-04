@@ -40,7 +40,7 @@ function SideBar(props) {
                     </Link>
                 </li>
                 <li className={classes.button}>
-                    <Link href='/pendings'>
+                    <Link href='/pending'>
                         <div className={classes.buttonInner}>
                             <FontAwesomeIcon icon={faTasks} />
                             <span className={classes.title}>Pending</span>

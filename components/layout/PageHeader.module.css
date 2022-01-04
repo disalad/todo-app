@@ -1,0 +1,40 @@
+.header {
+    display: flex;
+    align-items: center;
+    padding: 1em 0;
+    position: relative;
+}
+
+.toggleSideBarSect {
+    position: absolute;
+    left: 0;
+    /* top: -0.53em; */
+}
+
+.bars {
+    transform: scale(0.6);
+    padding: 0.75em 1em;
+    cursor: pointer;
+    width: max-content;
+    background-color: #ffffff;
+}
+
+.bars:hover {
+    background-color: #efefef;
+}
+
+.bars div {
+    width: 2.25em;
+    height: 0.25em;
+    background-color: #34373d;
+    margin: 0.5em 0;
+    border-radius: 1em;
+}
+
+.title {
+    margin-left: 3.5em;
+}
+
+.showBars {
+    margin-left: 1.5em !important;
+}

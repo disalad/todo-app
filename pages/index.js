@@ -1,14 +1,14 @@
 import React from 'react';
 import NewTodo from '../components/todo/NewTodo';
 import TodoList from '../components/todo/TodoList';
+// import PageHeader from '../components/layout/PageHeader';
 
 function Home() {
     return (
-        <div>
-            <h3>Todos</h3>
+        <>
             <NewTodo />
             <TodoList />
-        </div>
+        </>
     );
 }
 

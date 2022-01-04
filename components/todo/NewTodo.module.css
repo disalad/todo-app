@@ -7,14 +7,14 @@
     border-radius: 0.25em;
     overflow: hidden;
     width: 100%;
-    padding: 0.5em 0em;
+    padding: 0.5em 0.75em;
     margin-top: 1em;
     background-color: #efefef;
 }
 
 .inputWrapper {
     position: relative;
-    padding: 0 0 0 2.25em;
+    padding: 0 0 0 3em;
 }
 
 .input {
