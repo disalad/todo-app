@@ -1,16 +1,18 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { faCircle } from '@fortawesome/free-regular-svg-icons';
 import classes from './NewTodo.module.css';
 
-function NewTodo() {
+function NewTodo({ onSubmit }) {
     const [todo, setTodo] = useState('');
     const [inputOnFocus, setInputOnFocus] = useState(false);
+    const input = useRef();
 
-    const inputChangeHandler = ev => {
-        console.log(ev.target.value);
-        setTodo(ev.target.value);
+    const submitHandler = ev => {
+        setInputOnFocus(false);
+        input.current.value = '';
+        onSubmit(todo);
     };
 
     return (
@@ -26,16 +28,14 @@ function NewTodo() {
                     name='todo'
                     className={`${classes.input} ${inputOnFocus ? classes.focused : ''}`}
                     placeholder='Add a task'
-                    onChange={inputChangeHandler}
+                    onChange={ev => setTodo(ev.target.value)}
                     onFocus={ev => setInputOnFocus(true)}
                     autoComplete='off'
+                    ref={input}
                 />
             </div>
             {inputOnFocus && (
-                <button
-                    disabled={!todo.trim()}
-                    className={classes.addBtn}
-                    onClick={ev => alert('Clicked')}>
+                <button disabled={!todo.trim()} className={classes.addBtn} onClick={submitHandler}>
                     Add
                 </button>
             )}
