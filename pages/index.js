@@ -1,10 +1,12 @@
 import React from 'react';
+import connectDb from '../lib/connectDb';
+import Todo from '../models/Todo';
 import NewTodo from '../components/todo/NewTodo';
 import TodoList from '../components/todo/TodoList';
 import axios from 'axios';
-// import PageHeader from '../components/layout/PageHeader';
 
-function Home() {
+function Home({ todos }) {
+    console.warn(todos);
     const onSubmitHandler = async todo => {
         try {
             console.log(todo);
@@ -22,9 +24,24 @@ function Home() {
     return (
         <>
             <NewTodo onSubmit={onSubmitHandler} />
-            <TodoList />
+            <TodoList todos={todos} />
         </>
     );
+}
+
+export async function getServerSideProps() {
+    await connectDb();
+    const todos = await Todo.find({});
+    return {
+        props: {
+            todos: todos.map(todo => ({
+                _id: todo._id.toString(),
+                content: todo.content,
+                important: todo.important,
+                task_done: todo.task_done,
+            })),
+        },
+    };
 }
 
 export default Home;
