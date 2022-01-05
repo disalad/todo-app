@@ -1,7 +1,7 @@
 import connectDb from '../../../lib/connectDb';
 import Todo from '../../../models/Todo';
 
-export default async function (req, res) {
+export default async function Handler(req, res) {
     try {
         if (req.method === 'PATCH') {
             await connectDb();

@@ -1,11 +1,6 @@
-@font-face {
-    font-family: 'Open-sans-Regular';
-    src: url(../../public/fonts/OpenSans/OpenSans-Regular.ttf);
-}
 .main {
     display: grid;
     grid-template-columns: auto;
-    font-family: 'Open-sans-Regular', Arial, sans-serif !important;
 }
 
 .oneItem {

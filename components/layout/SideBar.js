@@ -7,7 +7,7 @@ import {
     faCalendar as farCalendarDay,
 } from '@fortawesome/free-regular-svg-icons';
 import classes from './SideBar.module.css';
-import { usePageTitle } from '../../hooks/usePageTitle';
+import { usePageTitle } from '../hooks/usepagetitle';
 import { useRouter } from 'next/router';
 
 function SideBar(props) {
@@ -26,7 +26,7 @@ function SideBar(props) {
             </section>
             <ul className={classes.ul}>
                 <li className={`${classes.button} ${pageTitle === 'Todo' ? classes.active : ''}`}>
-                    <Link href='/'>
+                    <Link href='/' passHref>
                         <div className={classes.buttonInner}>
                             <FontAwesomeIcon icon={farCalendarDay} />
                             <span className={classes.title}>Todos</span>
@@ -37,7 +37,7 @@ function SideBar(props) {
                     className={`${classes.button} ${
                         pageTitle === 'Important' ? classes.active : ''
                     }`}>
-                    <Link href='/important'>
+                    <Link href='/important' passHref>
                         <div className={classes.buttonInner}>
                             <FontAwesomeIcon icon={farStar} />
                             <span className={classes.title}>Important</span>
@@ -48,7 +48,7 @@ function SideBar(props) {
                     className={`${classes.button} ${
                         pageTitle === 'Pending' ? classes.active : ''
                     }`}>
-                    <Link href='/pending'>
+                    <Link href='/pending' passHref>
                         <div className={classes.buttonInner}>
                             <FontAwesomeIcon icon={faTasks} />
                             <span className={classes.title}>Pending</span>

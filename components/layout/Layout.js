@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import SideBar from './SideBar';
 import PageHeader from './PageHeader';
+import { usePageTitle } from '../hooks/usepagetitle';
 import { useRouter } from 'next/router';
-import { usePageTitle } from '../../hooks/usePageTItle';
 import classes from './Layout.module.css';
 
 function Layout({ children }) {
