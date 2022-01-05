@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState } from 'react';
 import connectDb from '../lib/connectDb';
 import Todo from '../models/Todo';
 import NewTodo from '../components/todo/NewTodo';
@@ -6,6 +6,7 @@ import TodoList from '../components/todo/TodoList';
 import axios from 'axios';
 
 function Home({ todos }) {
+    const [tasks, setTasks] = useState(todos);
     const onSubmitHandler = async todo => {
         try {
             console.log(todo);
@@ -14,7 +15,13 @@ function Home({ todos }) {
                 url: '/api/new',
                 data: { content: todo },
             });
-            console.warn(response);
+            setTasks(prev => [
+                ...prev,
+                {
+                    ...response.data.todo,
+                    _id: response.data.todo._id.toString(),
+                },
+            ]);
         } catch (err) {
             console.error(err.message);
         }
@@ -23,7 +30,7 @@ function Home({ todos }) {
     return (
         <>
             <NewTodo onSubmit={onSubmitHandler} />
-            <TodoList todos={todos} />
+            <TodoList todos={tasks} />
         </>
     );
 }
