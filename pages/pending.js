@@ -1,9 +1,20 @@
 import connectDb from '../lib/connectDb';
 import Todo from '../models/Todo';
 import TodoList from '../components/todo/TodoList';
+import Head from 'next/head';
+import { Fragment } from 'react';
 
 function PendingTasks({ todos }) {
-    return <TodoList todos={todos} />;
+    return (
+        <Fragment>
+            <Head>
+                <title>Todos || Pending</title>
+                <meta name='description' content='Todos || Manage your tasks easily' />
+                <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+            </Head>
+            <TodoList todos={todos} />
+        </Fragment>
+    );
 }
 
 export async function getServerSideProps() {
