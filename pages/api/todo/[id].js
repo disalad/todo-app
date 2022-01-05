@@ -3,7 +3,14 @@ import Todo from '../../../models/Todo';
 
 export default async function (req, res) {
     try {
-        if (req.method === 'GET') {
+        if (req.method === 'PATCH') {
+            await connectDb();
+            const updatedTodo = await Todo.findByIdAndUpdate(
+                req.query.id,
+                { $set: req.body },
+                { new: true },
+            );
+            res.status(201).json({ message: 'Todo updated', updatedTodo });
         } else if (req.method === 'DELETE') {
             await connectDb();
             const deletedTodo = await Todo.findByIdAndDelete(req.query.id);
@@ -13,6 +20,7 @@ export default async function (req, res) {
             throw new Error('Invalid HTTP method');
         }
     } catch (err) {
-        res.status(400).json({ message: err.message });
+        console.log(err);
+        res.status(400).json({ message: err });
     }
 }

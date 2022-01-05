@@ -13,8 +13,8 @@ function TodoList({ todos }) {
     }
     return (
         <section>
-            {todos.map(({ content, _id }, idx) => (
-                <TodoItem content={content} id={_id} key={idx} />
+            {todos.map(todo => (
+                <TodoItem {...todo} key={todo._id} />
             ))}
         </section>
     );
