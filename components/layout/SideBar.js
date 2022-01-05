@@ -7,8 +7,12 @@ import {
     faCalendar as farCalendarDay,
 } from '@fortawesome/free-regular-svg-icons';
 import classes from './SideBar.module.css';
+import { usePageTitle } from '../../hooks/usePageTitle';
+import { useRouter } from 'next/router';
 
 function SideBar(props) {
+    const router = useRouter();
+    const pageTitle = usePageTitle(router.pathname);
     return (
         <aside className={classes.sidebar}>
             <section className={classes.toggleSideBarSect}>
@@ -21,30 +25,33 @@ function SideBar(props) {
                 </div>
             </section>
             <ul className={classes.ul}>
-                <li className={classes.button}>
+                <li className={`${classes.button} ${pageTitle === 'Todo' ? classes.active : ''}`}>
                     <Link href='/'>
                         <div className={classes.buttonInner}>
                             <FontAwesomeIcon icon={farCalendarDay} />
                             <span className={classes.title}>Todos</span>
-                            <span className={classes.count}>1</span>
                         </div>
                     </Link>
                 </li>
-                <li className={classes.button}>
+                <li
+                    className={`${classes.button} ${
+                        pageTitle === 'Important' ? classes.active : ''
+                    }`}>
                     <Link href='/important'>
                         <div className={classes.buttonInner}>
                             <FontAwesomeIcon icon={farStar} />
                             <span className={classes.title}>Important</span>
-                            <span className={classes.count}>1</span>
                         </div>
                     </Link>
                 </li>
-                <li className={classes.button}>
+                <li
+                    className={`${classes.button} ${
+                        pageTitle === 'Pending' ? classes.active : ''
+                    }`}>
                     <Link href='/pending'>
                         <div className={classes.buttonInner}>
                             <FontAwesomeIcon icon={faTasks} />
                             <span className={classes.title}>Pending</span>
-                            <span className={classes.count}>1</span>
                         </div>
                     </Link>
                 </li>

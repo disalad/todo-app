@@ -68,8 +68,8 @@
     margin: 0 0.5em;
 }
 
-.count {
-    margin-left: auto;
+.active {
+    background-color: aqua !important;
 }
 
 @media (min-width: 50em) {
