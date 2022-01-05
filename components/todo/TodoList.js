@@ -2,11 +2,12 @@ import React from 'react';
 import TodoItem from './TodoItem';
 
 function TodoList({ todos }) {
-    console.warn(todos);
     if (!todos || todos.length <= 0) {
         return (
             <section>
-                <p>No tasks yet. Click on the input to add a new task</p>
+                <p style={{ marginLeft: '1.75em' }}>
+                    No tasks yet. Click on the input to add a new task
+                </p>
             </section>
         );
     }

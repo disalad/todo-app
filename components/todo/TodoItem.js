@@ -2,7 +2,8 @@ import { useState } from 'react';
 import classes from './TodoItem.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
-import { faStar as farStar } from '@fortawesome/free-regular-svg-icons';
+import { faStar as farStar, faTrashAlt as farTrashAlt } from '@fortawesome/free-regular-svg-icons';
+import axios from 'axios';
 
 function TodoItem({ content, id }) {
     const [starChecked, setStarChecked] = useState(false);
@@ -20,6 +21,21 @@ function TodoItem({ content, id }) {
         setTaskDone(prev => !prev);
     };
 
+    const deleteTodoHandler = async ev => {
+        const todoElement = ev.currentTarget.parentElement.parentElement;
+        const taskId = todoElement.getAttribute('data-id');
+        try {
+            const response = await axios({
+                method: 'DELETE',
+                url: `/api/todo/${taskId}`,
+            });
+            todoElement.remove();
+            console.log('Task deleted: ', taskId);
+        } catch (err) {
+            console.error(err.message);
+        }
+    };
+
     return (
         <article className={classes.todoItem} data-id={id}>
             <div
@@ -28,9 +44,19 @@ function TodoItem({ content, id }) {
                 <span className={classes.checkmark}></span>
             </div>
             <h1 className={classes.todoContent}>{content}</h1>
-            <div className={classes.starIconDiv} onClick={setMarkAsImportantHandler}>
-                <FontAwesomeIcon icon={starChecked ? faStar : farStar} />
+            <div className={classes.starIconDiv}>
+                <FontAwesomeIcon
+                    icon={starChecked ? faStar : farStar}
+                    onClick={setMarkAsImportantHandler}
+                />
+                <FontAwesomeIcon
+                    icon={farTrashAlt}
+                    className={classes.trashIcon}
+                    onClick={deleteTodoHandler}
+                />
             </div>
+            {/* <div className={classes.starIconDiv}> */}
+            {/* </div> */}
         </article>
     );
 }

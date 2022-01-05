@@ -21,6 +21,10 @@
     margin-left: auto;
 }
 
+.trashIcon {
+    margin-left: 0.5em;
+}
+
 /* Mark as done tick */
 .circle {
     position: relative;
