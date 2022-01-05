@@ -6,7 +6,6 @@ import TodoList from '../components/todo/TodoList';
 import axios from 'axios';
 
 function Home({ todos }) {
-    console.warn(todos);
     const onSubmitHandler = async todo => {
         try {
             console.log(todo);
