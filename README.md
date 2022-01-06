@@ -1,34 +1,55 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# TODO APPLICATION
 
+<!-- ABOUT THE PROJECT -->
+## About The Project
+
+### Built With
+
+* [Next.js](https://nextjs.org/)
+* [Mongodb](https://mongodb.com/)
+
+<!-- GETTING STARTED -->
 ## Getting Started
 
-First, run the development server:
+This is an example of how you may give instructions on setting up your project locally.
+To get a local copy up and running follow these simple example steps.
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+### Prerequisites
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+This is an example of how to list things you need to use the software and how to install them.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+* nodejs >= 14.17.6
+* yarn = latest
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+### Installation
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+1. Clone the repo
+   ```sh
+   git clone https://github.com/disaladamsas/todo-app.git
+   ```
+2. Install 3rd party packages
+   ```sh
+   yarn install
+   ```
 
-## Learn More
+3. Enter your mongodb uri in an enviroment file in root directory.
+   ```env
+   MONGODB_URI = your mongodb uri
+   ```
+   
+4. Start app in a development server 
+   ```sh
+   yarn dev
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+<!-- LICENSE -->
+## License
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Distributed under the MIT License. See `LICENSE` for more information.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+<!-- CONTACT -->
+## Contact
 
-## Deploy on Vercel
+Disala - damsasdisala@gmail.com
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Project Link: [https://github.com/disaladamsas/todo-app](https://github.com/disaladamsas/todo-app)
