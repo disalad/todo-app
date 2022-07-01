@@ -27,7 +27,7 @@ This is an example of how to list things you need to use the software and how to
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/disaladamsas/todo-app.git
+   git clone https://github.com/disalad/todo-app.git
    ```
 2. Install 3rd party packages
    ```sh
@@ -52,6 +52,4 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Disala - damsasdisala@gmail.com
-
-Project Link: [https://github.com/disaladamsas/todo-app](https://github.com/disaladamsas/todo-app)
+Project Link: [https://github.com/disalad/todo-app](https://github.com/disalad/todo-app)
